@@ -1,0 +1,22 @@
+# Python/venv
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Jupyter
+.ipynb_checkpoints/
+.jupyter/
+.profile
+
+# Data & artifacts (keep directory but ignore contents)
+data/
+!data/.gitkeep
+
+figures/
+reports/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
