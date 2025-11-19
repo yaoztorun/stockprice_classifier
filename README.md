@@ -1,61 +1,66 @@
-📈 Stock Price Movement Classifier
+# 📈 Stock Price Movement Classifier
 
-Predict whether tomorrow’s closing price will go up (1) or down (0) using a simple, interpretable Logistic Regression model trained on daily OHLCV (Open, High, Low, Close, Volume) stock data.
+Predict whether **tomorrow’s closing price** will go **up (1)** or **down (0)** using machine learning models trained on daily **OHLCV** (Open, High, Low, Close, Volume) data from the Kaggle *Huge Stock Market Dataset*.
 
-Dataset: Huge Stock Market Dataset (Kaggle)
+This repository contains:
 
-This is Model 1 — Logistic Regression, a linear baseline for next-day movement prediction.
-A Decision Tree Classifier will later be added to capture non-linear threshold patterns.
+- **Model 1 — Logistic Regression (Lab 2 implementation)**  
+  A fully manual Numpy-based gradient descent classifier adapted from KU Leuven’s Assignment 2.  
+  This model serves as the required baseline with no machine-learning libraries.
 
-⚙️ Environment Setup
-1️⃣ Clone the Repository
+- **Model 2 — Multi-Layer Perceptron (Neural Network)**  
+  A nonlinear model used for performance comparison and improvement.
+
+---
+
+# ⚙️ 1. Environment Setup
+
+## 1️⃣ Clone the Repository
+```bash
 git clone https://github.com/yaoztorun/stockprice_classifier.git
 cd stockprice_classifier
-
-2️⃣ Create and Activate Virtual Environment
-
-Windows (PowerShell):
-
+2️⃣ Create and Activate a Virtual Environment
+Windows (PowerShell)
+bash
+Kodu kopyala
 py -m venv .venv
 .venv\Scripts\Activate.ps1
 pip install --upgrade pip
 pip install -r requirements.txt
-
-
 If activation fails:
 
+bash
+Kodu kopyala
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process
-
-
-macOS / Linux:
-
+macOS / Linux
+bash
+Kodu kopyala
 python3 -m venv .venv
 source .venv/bin/activate
 pip install --upgrade pip
 pip install -r requirements.txt
-
-3️⃣ Download the Dataset (from Kaggle)
-
-Create a Kaggle API token:
+📥 2. Download the Dataset (Kaggle)
+1. Create Kaggle API Token
 Go to Kaggle → Account → API → Create New Token
-It will download a file named kaggle.json.
 
-Move it to:
+A file named kaggle.json will download.
 
-Windows: %USERPROFILE%\.kaggle\kaggle.json
+2. Move the token to the correct location
+Windows
 
-macOS/Linux: ~/.kaggle/kaggle.json
+shell
+Kodu kopyala
+%USERPROFILE%\.kaggle\kaggle.json
+macOS / Linux
 
-Download and unzip the dataset:
-
+bash
+Kodu kopyala
+~/.kaggle/kaggle.json
+3. Download the dataset
+bash
+Kodu kopyala
 pip install kaggle
+
 kaggle datasets download -d borismarjanovic/price-volume-data-for-all-us-stocks-etfs -p data/raw
+
 unzip data/raw/price-volume-data-for-all-us-stocks-etfs.zip -d data/raw
-
-
-Your folder should look like this:
-
-data/raw/Stocks/*.txt
-
-
-Each .txt file represents one stock ticker with historical daily data.
