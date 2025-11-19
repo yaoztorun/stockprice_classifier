@@ -1,11 +1,3 @@
-Here you go — **the entire README in one single, clean, perfectly formatted Markdown file**.
-Copy–paste directly into `README.md` — no missing sections, no extra code blocks, everything unified.
-
----
-
-# ✅ **FINAL FULL `README.md` (One Markdown File)**
-
-````markdown
 # 📈 Stock Price Movement Classifier
 
 Predict whether **tomorrow’s closing price** will go **up (1)** or **down (0)** using machine learning models trained on daily **OHLCV** (Open, High, Low, Close, Volume) data from the Kaggle *Huge Stock Market Dataset*.
